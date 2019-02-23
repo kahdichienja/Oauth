@@ -1,0 +1,9 @@
+{% extends "navbar.html" %}
+    {% block content_home %}
+        <div class="container mt-5">
+            <form method="POST" action="{% url 'add' %}">
+                {% csrf_token %}
+                {{ form }}
+            </form>
+        </div>
+    {% endblock content_home%}

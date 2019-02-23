@@ -8,4 +8,4 @@ from .forms import ContactForm
 class ContactFormView(FormView):
     form_class = ContactForm
     template_name = 'Auth/form/form.html'
-    success_url = '/'
+    success_url = 'Todos/'
