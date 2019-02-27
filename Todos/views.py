@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Todos
 from .forms import TodoForm
@@ -23,7 +23,14 @@ def details(request, id):
 def add(request):
     
     if(request.method == 'POST'):
-        return
+        name = request.POST['name']
+        Task = request.POST['Task']
+
+        todo = Todos(name = name, Task = Task)
+
+        todo.save()
+
+        return redirect('/Todos')
     else:
         form = TodoForm()
         return render(request, "add.html", {'form': form})

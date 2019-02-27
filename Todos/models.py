@@ -7,7 +7,7 @@ class Todos(models.Model):
     name        = models.CharField(max_length=30)
     Task        = models.TextField(max_length=200)
     date        = models.DateTimeField(default = datetime.now, blank = True)
-    is_complete = models.CharField(max_length = 5, default=True, blank = True)
+    is_complete = models.CharField(max_length = 5, default=False, blank = True)
 
     def __str__(self):
         heading = self.name + ", Completed: " + self.is_complete
