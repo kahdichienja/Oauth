@@ -1,46 +1,58 @@
- <!DOCTYPE html>
-  <html>
-    <head>
-      <!--Import Google Icon Font-->
-      {% load static %}
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link href="{% static 'css/boot4.3.css'%}" rel="stylesheet">
-      <link href="{% static 'css/app.css'%}" rel="stylesheet">
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <title>Todo</title>
-    </head>
+<!DOCTYPE html>
+<html>
 
-    <body class="grey lighten-2">
-    <nav class="grey lighten-3 z-depth-2 container-fluid">
+<head>
+    <!--Import Google Icon Font-->
+    {% load static %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link href="{% static 'css/boot4.3.css'%}" rel="stylesheet">
+    <link href="{% static 'css/app.css'%}" rel="stylesheet">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo</title>
+</head>
+
+<body class="grey lighten-4">
+    <nav class="grey z-depth-2 container-fluid">
         <div class="nav-wrapper">
-        <a href="#!" class="ml-4 brand left  blue-text">Todo</a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-            <li><a href="">Home</a></li>
-            <li><a href="/Todos/add">Todos</a></li>
-            <li><a href="">Add Todo</a></li>
-        </ul>
+            <a href="#!" class="ml-4 brand left  blue-text">Todo</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'index' %}">Todos</a></li>
+                <li><a href="{% url 'add' %}">Add Todo</a></li>
+            </ul>
         </div>
     </nav>
 
     <ul class="sidenav" id="mobile-demo">
-        <li><a href="">Sass</a></li>
-        <li><a href="">Components</a></li>
-        <li><a href="">Add Todo</a></li>
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src="https://source.unsplash.com/random/800x752">
+                </div>
+                <a href="#user"><img class="circle" src="https://source.unsplash.com/random/800x751"></a>
+                <a href="#name"><span class="white-text name">John Doe</span></a>
+                <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+            </div>
+        </li>
+        <li><a href="{% url 'index' %}"><i class="material-icons">home</i>Home</a></li>
+        <li><a href=""><i class="material-icons">bubble_chart</i>Blog</a></li>
+        <li><a href="{% url 'add' %}"><i class="material-icons">add</i>Add Todo</a></li>
     </ul>
     {% block content_home %}
-         
+
     {% endblock content_home%}
     <!--JavaScript at end of body for optimized loading-->
     <script src="{% static 'js/jquery-3.3.1.min.js'%}"></script>
     <script src="{% static 'js/materialize.min.js'%}"></script>
     <script>
-        $(document).ready(function(){
+        $(document).ready(function () {
             $('.sidenav').sidenav();
             $('.modal').modal();
         });
     </script>
-    </body>
-  </html>   
+</body>
+
+</html>

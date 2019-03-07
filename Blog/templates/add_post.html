@@ -1,0 +1,54 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+<!--================Header Menu Area =================-->
+{% include "blog/navbar.html" %}
+<!--================ End Header Menu Area =================-->
+<section class="banner_area">
+    <div class="container">
+        <div class="banner_inner_text">
+            <h2>Add Post</h2>
+        </div>
+    </div>
+</section>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form action="" method="post" class="contact_us_form row" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="form-group col-lg-6">
+                    <input type="text" class="form-control" name="title" maxlength="100" placeholder="Tiltle" required id="id_title">
+                </div>
+                <div class="form-group col-lg-6">
+                    <input type="text" class="form-control" name="author" maxlength="100" placeholder="Author" required id="id_author">
+                </div>
+                <div class="form-group col-lg-12">
+                    <textarea class="form-control" name="description" cols="40" rows="10" placeholder="Add caption.."
+                        id="id_description"></textarea>
+                </div>
+                <div class="form-group col-lg-12">
+                    <label for="id_photo">Photo:</label>
+                    <input type="file" class="form-control" name="photo" accept="image/*" id="id_photo">
+                </div>
+                <div class="form-group  col-lg-12">
+                    <button type="submit" value="submit" class="btn submit_btn form-control">Post</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <div class="feature_item">
+                <h4>Preview</h4>
+                <h5>Title</h5><span>By Author</span>
+                <p>
+                    Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit.
+                    Etiam
+                    nec odio vestibul.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

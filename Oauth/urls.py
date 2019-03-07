@@ -20,5 +20,6 @@ from Auth.views import ContactFormView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('Auth/form/', ContactFormView.as_view()),
-    path('Todos/', include('Todos.urls'))
+    path('Todos/', include('Todos.urls')),
+    path('Blog/', include('Blog.urls'))
 ]

@@ -10,7 +10,7 @@ def index(request):
     context = {
         'todos':todos
     }
-    return render(request, "index.html", context)
+    return render(request, "test.html", context)
     
 def details(request, id):
     todo = Todos.objects.get(id=id)
@@ -25,7 +25,7 @@ def add(request):
     if(request.method == 'POST'):
         name = request.POST['name']
         Task = request.POST['Task']
-
+        
         todo = Todos(name = name, Task = Task)
 
         todo.save()
