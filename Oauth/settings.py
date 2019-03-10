@@ -100,8 +100,8 @@ DATABASES = {
 # }
 # uploadcare imageupload API
 UPLOADCARE = {
-    'pub_key': 'de9130ae79540903c80e',
-    'secret': '66165d450ba4a59dd9ee',
+    'pub_key': 'de9130ae79540903c8',
+    'secret': '66165d450ba4a59dd',
 }
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
